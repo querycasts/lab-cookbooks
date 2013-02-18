@@ -1,0 +1,18 @@
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  di = diff
+  dc = diff --cached
+  aa = add --all
+  amend = commit --amend -C HEAD
+[core]
+  editor = vim
+  excludesfile = /home/vagrant/.gitignore
+  autocrlf = input
+[color]
+  ui = true
+[branch]
+  autosetuprebase = always
+[push]
+  default = upstream

@@ -1,8 +1,3 @@
-#
-# Cookbook Name:: querycasts-lab
-# Recipe:: default
-#
-# Copyright 2013, YOUR_COMPANY_NAME
-#
-# All rights reserved - Do Not Redistribute
-#
+include_recipe("querycasts-lab::dotfiles")
+include_recipe("querycasts-lab::git")
+include_recipe("querycasts-lab::vim")
