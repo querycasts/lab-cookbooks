@@ -30,7 +30,7 @@ You must put an `env.rb` file in the root of the project that adds
       aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"]
     )
 
-    directory = connection.directories.get("querycasts")
+    directory = connection.directories.get("assets.querycasts.com")
 
     directory.files.create(
       key: "lab/cookbooks.tar.gz",
