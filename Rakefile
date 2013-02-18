@@ -4,7 +4,7 @@ namespace :cookbooks do
     sh "rm -rf pkg"
   end
 
-  desc "Create a tarball of of the cookbooks."
+  desc "Create a tarball of the cookbooks."
   task :tar do
     sh "mkdir -p pkg"
     sh "tar zcvf pkg/cookbooks.tar.gz ./cookbooks"
