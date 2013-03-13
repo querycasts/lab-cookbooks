@@ -1,0 +1,25 @@
+# Querycasts additions
+e=`printf "\033"`
+end="$e[0m"
+red="$e[1;31m"
+green="$e[1;32m"
+yellow="$e[1;33m"
+blue="$e[1;34m"
+magenta="$e[1;35m"
+darkcyan="$e[1;36m"
+export EDITOR=vim
+_parse_git_branch() {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo "("${ref#refs/heads/}") "
+}
+_parse_ruby_version() {
+    version=$(rbenv version-name 2> /dev/null)
+    if [ -z "$version" ]; then
+        version=$(ruby -v | cut -d ' ' -f 2 2> /dev/null)
+    fi
+    if [ -z "$version" ]; then
+        return
+    fi
+    echo "[$version] "
+}
+export PS1="\[$darkcyan\][\$(hostname)] \[$red\]\$(_parse_ruby_version)\[$green\]\w\[$darkcyan\] \$(_parse_git_branch)\[$green\]\\$\[$end\] "
