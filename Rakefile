@@ -1,3 +1,6 @@
+# Keep this in sync with the version of the VM and the cookbook version.
+LAB_VERSION = "0.0.1"
+
 namespace :cookbooks do
   desc "Remove any previously packaged cookbooks."
   task :clean do
@@ -33,7 +36,7 @@ You must put an `env.rb` file in the root of the project that adds
     directory = connection.directories.get("assets.querycasts.com")
 
     directory.files.create(
-      key: "lab/cookbooks.tar.gz",
+      key: "lab/cookbooks/lab-#{LAB_VERSION}.tar.gz",
       body: File.read("pkg/cookbooks.tar.gz"),
       content_type: "application/x-gzip",
       public: true
